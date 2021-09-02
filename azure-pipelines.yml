@@ -15,16 +15,10 @@ strategy:
       python.version: '2.7'
 
 
-
 steps:
-- task: UsePythonVersion@0
+
+- task: CmdLine@2
   inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
-- script: python "add.py"
-- task: PythonScript@0
-  inputs:
-    scriptSource: 'inline'
     script: |
-      print('This is Section 1 Azure Demonstration')
-      print('KL-CSE')
+      javac sum.java
+      java sum
